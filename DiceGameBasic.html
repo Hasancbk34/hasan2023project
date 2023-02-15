@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Technopat</title>
+        <style>
+        body{
+            background-image: back.jpg;
+        }
+             table, tr, th, td {
+                border: 2px solid red;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+            #count-row th, #user-row th, #computer-row th {
+                font-family: sans-serif;
+                padding: 8px;
+                text-align: center;
+            }
+            #user-row td, #computer-row td {
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+    	<div>Computer Score : <span id="computerTotal"></span></div>
+    	<div>User Score : <span id="userScore"></span></div>
+        <table>
+            <tr id="count-row">
+                <th>/</th>
+            </tr>
+            <tr id="user-row">
+                <th>User</th>
+            </tr>
+            <tr id="computer-row">
+                <th>Computer</th>
+            </tr>
+        </table>
+        <span id="buttonone"> 
+        <button onclick="addColumn()">Add Column</button>
+        </span>
+
+        <div>En az atan kazanır. Toplam 6 tur var. </div>
+        <script>
+            let count = 1;
+
+			const computerScore = document.getElementById('computerTotal')
+            const userScore = document.getElementById('userScore')
+            computerScore.value = 0
+            userScore.value = 0
+            function addColumn() {
+                const countRow = document.getElementById("count-row")
+                const userRow = document.getElementById("user-row")
+                const computerRow = document.getElementById("computer-row")
+                countRow.innerHTML += `<th>${count}</th>`;
+                count++;
+                let userrandom = ~~(Math.random() * 5) + 1
+                let cprandom = ~~(Math.random() * 5) + 1
+                userRow.innerHTML += `<td>${userrandom}</td>`
+                computerRow.innerHTML += `<td>${cprandom}</td>`
+                computerScore.value += cprandom
+                computerScore.innerHTML = computerScore.value
+                userScore.value += userrandom
+                userScore.innerHTML = userScore.value
+                if(count > 6){
+                	if(userScore.value > computerScore.value){
+                		document.getElementById("buttonone").innerHTML = "<h1>Kaybettin</h1>" 
+                	}
+                	else if(userScore.value < computerScore.value){
+                		document.getElementById("buttonone").innerHTML = "<h1>Kazandın</h1>" 
+                	}else{
+                		document.getElementById("buttonone").innerHTML = "<h1>Berabere</h1>"
+                	}
+                }}
+
+        </script>
+    </body>
+</html>
+
