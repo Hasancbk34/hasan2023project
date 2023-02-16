@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+</head>
+<style type="text/css">
+	body {
+		text-align: center;
+	}
+</style>
+<body>
+<input type="text" name="showing" id="show" autocomplete="off"><br>
+<button id="bir"value="1" onclick="document.getElementById('show').value += '1' ">1</button>
+<button id="iki"value="2" onclick="document.getElementById('show').value += '2' ">2</button>
+<button id="uc"value="3" onclick="document.getElementById('show').value += '3' ">3</button>
+<button id="arti" onclick="document.getElementById('show').value += '+' ">+</button><br>
+<button id="dort" value="4" onclick="document.getElementById('show').value += '4' ">4</button>
+<button id="bes" value="5" onclick="document.getElementById('show').value += '5' ">5</button>
+<button id="altı" value="6" onclick="document.getElementById('show').value += '6' ">6</button>
+<button id="eksi" onclick="document.getElementById('show').value += '-' ">-</button><br>
+<button id="yedi" value="7" onclick="document.getElementById('show').value += '7' ">7</button>
+<button id="sekiz" value="8" onclick="document.getElementById('show').value += '8' ">8</button>
+<button id="dokuz"value9 onclick="document.getElementById('show').value += '9' ">9</button>
+<button id="bolu" onclick="document.getElementById('show').value += '/' ">/</button><br>
+<button value="0" style="width: 60px; margin-right: 10px; " id="sifir" onclick="document.getElementById('show').value += '0' ">0</button>
+<button id="carpi" onclick="document.getElementById('show').value += '*' ">X</button><br>
+<button id="esit" onclick="document.getElementById('show').value = eval(document.getElementById('show').value)">=</button>
+<button onclick="document.getElementById('show').value = '' ">Clear</button>
+
+
+<script type="text/javascript">
+
+</script>
+
+
+</body>
+</html>
